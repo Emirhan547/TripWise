@@ -1,0 +1,32 @@
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build
+**/bin/
+**/obj/
+
+# Test
+**/TestResults/
+
+# IDE
+.idea/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Local Git backup
+.git-backup-20261111/
+
+
+# Local environment settings
+**/appsettings.Development.json

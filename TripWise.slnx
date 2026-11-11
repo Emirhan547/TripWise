@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="Core/TripWise.Application/TripWise.Application.csproj" />
+    <Project Path="Core/TripWise.Domain/TripWise.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/TripWise.Persistence/TripWise.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="Presentation/TripWise.WebAPI/TripWise.WebAPI.csproj" Id="b1a4f761-d86e-4e37-a4bc-1e519f95ef1b" />
+  </Folder>
+</Solution>

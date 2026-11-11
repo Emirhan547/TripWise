@@ -1,0 +1,29 @@
+@TripWise.WebAPI_HostAddress = http://localhost:5221
+
+### Create Trip - Success
+
+POST {{TripWise.WebAPI_HostAddress}}/api/trips
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "İstanbul Gezisi",
+    "description": "İstanbul tarihi ve turistik yerleri.",
+    "startDate": "2026-12-15",
+    "endDate": "2026-12-17"
+}
+
+###
+
+### Create Trip - Validation Error
+
+POST {{TripWise.WebAPI_HostAddress}}/api/trips
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "",
+    "description": "Test",
+    "startDate": "2026-12-17",
+    "endDate": "2026-12-15"
+}
