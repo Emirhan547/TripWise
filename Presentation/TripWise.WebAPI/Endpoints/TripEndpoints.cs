@@ -11,7 +11,7 @@ public static class TripEndpoints
 {
     public static IEndpointRouteBuilder MapTripEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/api/trips").WithTags("Trips");
+        var group = app.MapGroup("/api/trips").WithTags("Trips").RequireAuthorization();
         group.MapPost("/", async (CreateTripCommand command,ISender sender,CancellationToken cancellationToken) =>
         {
             var result = await sender.Send(command, cancellationToken);

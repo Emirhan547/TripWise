@@ -10,4 +10,6 @@ public sealed class Destination : Entity
     public string CountryName { get; set; } = default!;
 
     public string CountryCode { get; set; } = default!;
+    public ICollection<TripDestination> TripDestinations { get; private set; }
+    = new List<TripDestination>();
 }

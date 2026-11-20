@@ -1,15 +1,16 @@
 ﻿using MediatR;
+using TripWise.Application.Abstractions.Identity;
 using TripWise.Application.Common.Results;
 using TripWise.Application.Contracts.Persistence;
 
 namespace TripWise.Application.Features.Trips.Commands.DeleteTrip;
 
-public sealed class DeleteTripCommandHandler(ITripRepository _tripRepository) : IRequestHandler<DeleteTripCommand, Result<Guid>>
+public sealed class DeleteTripCommandHandler(ICurrentUserService currentUserService, ITripRepository _tripRepository) : IRequestHandler<DeleteTripCommand, Result<Guid>>
 {
    
     public async Task<Result<Guid>> Handle(DeleteTripCommand request,CancellationToken cancellationToken)
     {
-        var trip = await _tripRepository.GetByIdAsync( request.Id, cancellationToken,tracking: true);
+        var trip = await _tripRepository.GetByIdAsync(currentUserService.UserId, request.Id, cancellationToken,tracking: true);
 
         if (trip is null)
         {
